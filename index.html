@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <!-- Materializecss -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js'></script>
+</header>
+<body>
+
+<h1 class='center'>Burger Quiz</h1>
+<br><br>
+<ul id='list'>
+
+</ul>
+
+</body>
+
+<script>
+   function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    const items = [
+        'Jean',
+        'Jacques',
+        'Marie',
+        'Adolf',
+        'Marion',
+        'Cyril',
+        'Jérôme',
+        'Patrick',
+        'Pascal',
+        'Jean-Jacques',
+        'Ophelie',
+        'Zinedine',
+        'Alexandre',
+        'Marine',
+        'Nicolas',
+        'Emile',
+        'Marc'
+    ]
+    shuffleArray(items)
+
+    const list = document.getElementById('list')
+    items.forEach(item => {
+        const li = document.createElement('li')
+        li.classList += " center"
+        li.innerHTML = '<h2>' + item + '<br><br><br><br></h2>'
+        list.appendChild(li)
+    })
+</script>
+
+</html>
